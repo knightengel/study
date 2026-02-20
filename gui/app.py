@@ -1,8 +1,3 @@
-"""
-PyQt6 приложение для управления банковскими счетами.
-Основано на классе Bank из utils/bank.py
-"""
-
 import sys
 from PyQt6.QtWidgets import (
     QApplication,
@@ -33,7 +28,6 @@ class BankApp(QMainWindow):
         self.setMinimumSize(600, 500)
         self.resize(700, 550)
 
-        # Храним ссылки на счета для отображения
         self.account_items: dict[int, QListWidgetItem] = {}
         self.account_id = 0
 
@@ -41,7 +35,6 @@ class BankApp(QMainWindow):
         self.setCentralWidget(central)
         layout = QVBoxLayout(central)
 
-        # === Создание счёта ===
         create_group = QGroupBox("Создать новый счёт")
         create_layout = QFormLayout(create_group)
         self.owner_input = QLineEdit()
@@ -58,7 +51,6 @@ class BankApp(QMainWindow):
 
         splitter = QSplitter(Qt.Orientation.Horizontal)
 
-        # === Список счетов ===
         accounts_group = QGroupBox("Счета")
         accounts_layout = QVBoxLayout(accounts_group)
         self.accounts_list = QListWidget()
@@ -66,7 +58,6 @@ class BankApp(QMainWindow):
         accounts_layout.addWidget(self.accounts_list)
         splitter.addWidget(accounts_group)
 
-        # === Операции с выбранным счётом ===
         ops_group = QGroupBox("Операции")
         ops_layout = QVBoxLayout(ops_group)
 
@@ -89,7 +80,6 @@ class BankApp(QMainWindow):
         btn_layout.addWidget(withdraw_btn)
         ops_layout.addLayout(btn_layout)
 
-        # === Информация о владельце ===
         owner_group = QGroupBox("Информация о владельце")
         owner_layout = QVBoxLayout(owner_group)
         self.owner_search = QLineEdit()
@@ -108,7 +98,6 @@ class BankApp(QMainWindow):
         splitter.setSizes([250, 350])
         layout.addWidget(splitter)
 
-        # Отображаем счета, созданные в main.py
         self._refresh_list()
 
     def _add_account_to_list(self, account: Bank):
