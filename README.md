@@ -21,6 +21,16 @@ study/
 ## Установка
 
 ```bash
+# Клонировать репозиторий
+git clone https://github.com/knightengel/study.git
+cd study
+
+# Создать виртуальное окружение (рекомендуется)
+python -m venv .venv
+source .venv/bin/activate   # Linux/macOS
+# .venv\Scripts\activate    # Windows
+
+# Установить зависимости
 pip install -r requirements.txt
 ```
 
