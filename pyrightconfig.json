@@ -1,4 +1,8 @@
 {
-  "pythonPath": "/nix/store/7lnmd7k2i5mmcwshmy1yg4whzlwhd37v-python3-3.13.11-env/bin/python",
-  "extraPaths": ["."]
+  "extraPaths": [
+    ".",
+    "/nix/store/7lnmd7k2i5mmcwshmy1yg4whzlwhd37v-python3-3.13.11-env/lib/python3.13/site-packages",
+    "/nix/store/996bczig4lv7qm1sz64i8b11clnjmkri-python3-3.13.11-env/lib/python3.13/site-packages"
+  ],
+  "reportMissingImports": "none"
 }
